@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 resource "aws_iam_role" "AWSServiceRoleForAmazonEMRServerless" {
-    name  = "AWSServiceRoleForAmazonEMRServerless"
+    name  = "AWSServiceRoleForAmazonEMRServerless1"
     assume_role_policy = <<EOF
 {
 "Version": "2012-10-17",
@@ -22,7 +22,7 @@ EOF
 }
 
 resource "aws_iam_policy" "AWSServiceRoleForAmazonEMRServerless" {
-  name = "AWSServiceRoleForAmazonEMRServerless"
+  name = "AWSServiceRoleForAmazonEMRServerless1"
   description = "Policy for EMR Studio"
 
 policy = <<EOF
@@ -45,9 +45,9 @@ policy = <<EOF
 EOF
 }
 
-resource "aws_iam_role_policy_attachment" "AWSServiceRoleForAmazonEMRServerless" {
- role   = aws_iam_role.AWSServiceRoleForAmazonEMRServerless.name
- policy_arn = aws_iam_policy.AWSServiceRoleForAmazonEMRServerless.arn
+resource "aws_iam_role_policy_attachment" "AWSServiceRoleForAmazonEMRServerless1" {
+ role   = aws_iam_role.AWSServiceRoleForAmazonEMRServerless1.name
+ policy_arn = aws_iam_policy.AWSServiceRoleForAmazonEMRServerless1.arn
 }
 
 resource "aws_emr_studio" "uws-emrserverless-studio" {
@@ -55,7 +55,7 @@ resource "aws_emr_studio" "uws-emrserverless-studio" {
     default_s3_location  = "s3://khizer-emr/emr/"
     engine_security_group_id = "sg-0e1990bee4e65356f"
     name = "uws-emrserverless-studio"
-    service_role = aws_iam_role.AWSServiceRoleForAmazonEMRServerless.arn
+    service_role = aws_iam_role.AWSServiceRoleForAmazonEMRServerless1.arn
     subnet_ids = ["subnet-d8ecbfb0", "subnet-525ede1e"]
     vpc_id = "vpc-105d6878"
     workspace_security_group_id = "sg-0970e3e1591fb551d"
