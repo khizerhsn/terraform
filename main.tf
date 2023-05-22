@@ -1,8 +1,4 @@
-provider "aws" {
-  access_key = "AKIAZH76EJCHWUUDQYV5"
-  secret_key = "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"
-  region     = "ap-south-1"
-}
+
 
 data "aws_iam_role" "AWSServiceRoleForAmazonEMRServerless" {
   name = "AWSServiceRoleForAmazonEMRServerless"
