@@ -4,7 +4,7 @@ provider "aws" {
   region     = "ap-south-1"
 }
 
-resource "aws_iam_role" "AWSServiceRoleForAmazonEMRServerless" {
+resource "aws_iam_role" "AWSServiceRoleForAmazonEMRServerless1" {
     name  = "AWSServiceRoleForAmazonEMRServerless1"
     assume_role_policy = <<EOF
 {
@@ -21,7 +21,7 @@ resource "aws_iam_role" "AWSServiceRoleForAmazonEMRServerless" {
 EOF
 }
 
-resource "aws_iam_policy" "AWSServiceRoleForAmazonEMRServerless" {
+resource "aws_iam_policy" "AWSServiceRoleForAmazonEMRServerless1" {
   name = "AWSServiceRoleForAmazonEMRServerless1"
   description = "Policy for EMR Studio"
 
