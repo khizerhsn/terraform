@@ -4,53 +4,6 @@ provider "aws" {
   region     = "ap-south-1"
 }
 
-'''resource "aws_iam_role" "AWSServiceRoleForAmazonEMRServerless1" {
-    name  = "AWSServiceRoleForAmazonEMRServerless1"
-    assume_role_policy = <<EOF
-{
-"Version": "2012-10-17",
-"Statement": [{
-    "Sid": "",
-    "Effect": "Allow",
-    "Principal": {
-    "Service": "elasticmapreduce.amazonaws.com"
-    },
-    "Action": "sts:AssumeRole"
-}]
-}
-EOF
-}
-
-resource "aws_iam_policy" "AWSServiceRoleForAmazonEMRServerless1" {
-  name = "AWSServiceRoleForAmazonEMRServerless1"
-  description = "Policy for EMR Studio"
-
-policy = <<EOF
-{
-    "Statement": [
-        {
-            "Action": [
-            "emr-containers:StartJobRun",
-            "emr-containers:DescribeJobRun",
-            "emr-containers:CancelJobRun",
-            "s3:*"
-            ],
-            "Effect": "Allow",
-            "Resource": "*",
-            "Sid": "StudioAccess"
-        }
-    ],
-    "Version": "2012-10-17"
-}
-EOF
-}
-
-resource "aws_iam_role_policy_attachment" "AWSServiceRoleForAmazonEMRServerless1" {
- role   = aws_iam_role.AWSServiceRoleForAmazonEMRServerless1.name
- policy_arn = aws_iam_policy.AWSServiceRoleForAmazonEMRServerless1.arn
-}
-
-'''
 data "aws_iam_role" "AWSServiceRoleForAmazonEMRServerless" {
   name = "AWSServiceRoleForAmazonEMRServerless"
 }
