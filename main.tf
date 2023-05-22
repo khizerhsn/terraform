@@ -61,8 +61,7 @@ resource "aws_emr_studio" "uws-emrserverless-studio" {
     workspace_security_group_id = "sg-0970e3e1591fb551d"
 }
 
-resource "aws_emrserverless_application" "click_log_loggregator_emr_serverless" 
-{
+resource "aws_emrserverless_application" "click_log_loggregator_emr_serverless" {
    name = "uws-testing-application"
    release_label = "emr-6.9.0"
    type = "spark"
