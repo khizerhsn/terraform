@@ -99,12 +99,3 @@ resource "aws_emrserverless_application" "click_log_loggregator_emr_serverless" 
     application-name = "uws"
     environment-type = "non-prod"
  }
-}
-
-terraform {
- backend "s3" {
-    bucket = "cloudops-emrserverless"
-    key = "EMR-DevOps/terraform.tfstate"
-    region = "ap-south-1"
-    }
-}
