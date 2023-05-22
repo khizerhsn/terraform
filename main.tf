@@ -22,8 +22,8 @@ EOF
 }
 
 resource "aws_iam_policy" "AWSServiceRoleForAmazonEMRServerless" {
-name = "AWSServiceRoleForAmazonEMRServerless"
-description = "Policy for EMR Studio"
+  name = "AWSServiceRoleForAmazonEMRServerless"
+  description = "Policy for EMR Studio"
 
 policy = <<EOF
 {
