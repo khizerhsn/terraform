@@ -75,9 +75,9 @@ resource "aws_emrserverless_application" "click_log_loggregator_emr_serverless" 
         worker_configuration {
         cpu    = "4 vCPU"
         memory = "20 GB"
-        }
-    }
-}
+          }
+      }
+  }
 
  initial_capacity {
  initial_capacity_type = "Executor"
@@ -87,16 +87,17 @@ resource "aws_emrserverless_application" "click_log_loggregator_emr_serverless" 
         worker_configuration {
         cpu  = "4 vCPU"
         memory = "20 GB"
-        }
-    }
- }
-}
+         }
+      }
+  }
 
-maximum_capacity {
+
+  maximum_capacity {
     cpu  = "2000 vCPU"
     memory = "10000 GB"
-}
-tags = {
+  }
+  tags = {
     application-name = "uws"
     environment-type = "non-prod"
+   }
 }
