@@ -66,9 +66,9 @@ resource "aws_emrserverless_application" "click_log_loggregator_emr_serverless"
    name = "uws-testing-application"
    release_label = "emr-6.9.0"
    type = "spark"
-}
 
- initial_capacity {
+
+   initial_capacity {
     initial_capacity_type = "Driver"
 
     initial_capacity_config {
@@ -91,6 +91,7 @@ resource "aws_emrserverless_application" "click_log_loggregator_emr_serverless"
         }
     }
  }
+}
 
  maximum_capacity {
     cpu  = "2000 vCPU"
